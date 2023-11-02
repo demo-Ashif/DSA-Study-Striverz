@@ -23,7 +23,7 @@ public class CheckStringSwap {
             if (list.size() > 2) return false;
         }
 
-        return (list.size() == 0 || list.size() == 2 &&
+        return (list.isEmpty() || list.size() == 2 &&
                 s1.charAt(list.get(0)) == s2.charAt(list.get(1)) &&
                 s2.charAt(list.get(0)) == s1.charAt(list.get(1)));
     }
