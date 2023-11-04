@@ -70,8 +70,8 @@ public class Patterns {
         for (int row = 1; row <= n; row++) {
 
             //space
-            for (int col = 1; col <= (n - (col + 1)); col++) {
-                System.out.print("2");
+            for (int col = n-1; col >= row; col--) {
+                System.out.print(" ");
             }
 
             //star
@@ -80,8 +80,29 @@ public class Patterns {
             }
 
             //space
-            for (int col = 1; col <= (n - (col + 1)); col++) {
-                System.out.print("2");
+            for (int col = n-1; col >= row; col--) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void nStartTriangleRevers(int n) {
+        for (int row = 1; row <= n; row++) {
+
+            //space
+            for (int col = n-1; col >= row; col--) {
+                System.out.print(" ");
+            }
+
+            //star
+            for (int col = 1; col <= 2 * row - 1; col++) {
+                System.out.print("*");
+            }
+
+            //space
+            for (int col = n-1; col >= row; col--) {
+                System.out.print(" ");
             }
             System.out.println();
         }
