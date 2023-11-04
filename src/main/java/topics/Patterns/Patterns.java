@@ -94,20 +94,20 @@ public class Patterns {
     }
 
     static void pattern7(int n) {
-        for (int row = 1; row <= n; row++) {
+        for (int row = 0; row < n; row++) {
 
             //space
-            for (int col = 0; col >= row; col--) {
+            for (int col = 0; col < row; col++) {
                 System.out.print(" ");
             }
 
             //star
-            for (int col = n; col >= 2 * row - 1; col--) {
+            for (int col = 0; col < 2 * (n-row)-1; col++) {
                 System.out.print("*");
             }
 
             //space
-            for (int col = n-1; col >= row; col--) {
+            for (int col = 0; col < row; col++) {
                 System.out.print(" ");
             }
             System.out.println();
