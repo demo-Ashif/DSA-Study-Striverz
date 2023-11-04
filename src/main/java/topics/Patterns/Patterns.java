@@ -1,9 +1,15 @@
 package topics.Patterns;
 
 public class Patterns {
+    //Rules
+    /*
+    * 1. Count Number of Rows
+    * 2. For the inner loop, focus on the Column & connect them somehow to the rows
+    * 3.
+    * 4. Observe symmetry (Optional) */
 
     public static void main(String[] args) {
-        nStartTriangle(3);
+        pattern7(3);
     }
 
     static void Pattern1(int n) {
@@ -66,37 +72,37 @@ public class Patterns {
         }
     }
 
-    static void nStartTriangle(int n) {
-        for (int row = 1; row <= n; row++) {
+    static void pattern6(int n) {
+        for (int row = 0; row < n; row++) {
 
             //space
-            for (int col = n-1; col >= row; col--) {
+            for (int col = 0; col < n-row-1; col++) {
                 System.out.print(" ");
             }
 
             //star
-            for (int col = 1; col <= 2 * row - 1; col++) {
+            for (int col = 0; col < 2 * row + 1; col++) {
                 System.out.print("*");
             }
 
             //space
-            for (int col = n-1; col >= row; col--) {
+            for (int col = 0; col < n-row-1; col++) {
                 System.out.print(" ");
             }
             System.out.println();
         }
     }
 
-    static void nStartTriangleRevers(int n) {
+    static void pattern7(int n) {
         for (int row = 1; row <= n; row++) {
 
             //space
-            for (int col = n-1; col >= row; col--) {
+            for (int col = 0; col >= row; col--) {
                 System.out.print(" ");
             }
 
             //star
-            for (int col = 1; col <= 2 * row - 1; col++) {
+            for (int col = n; col >= 2 * row - 1; col--) {
                 System.out.print("*");
             }
 
