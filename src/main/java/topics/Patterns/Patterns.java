@@ -3,13 +3,13 @@ package topics.Patterns;
 public class Patterns {
     //Rules
     /*
-    * 1. Count Number of Rows
-    * 2. For the inner loop, focus on the Column & connect them somehow to the rows
-    * 3.
-    * 4. Observe symmetry (Optional) */
+     * 1. Count Number of Rows
+     * 2. For the inner loop, focus on the Column & connect them somehow to the rows
+     * 3.
+     * 4. Observe symmetry (Optional) */
 
     public static void main(String[] args) {
-        pattern7(3);
+        pattern13(5);
     }
 
     static void Pattern1(int n) {
@@ -76,7 +76,7 @@ public class Patterns {
         for (int row = 0; row < n; row++) {
 
             //space
-            for (int col = 0; col < n-row-1; col++) {
+            for (int col = 0; col < n - row - 1; col++) {
                 System.out.print(" ");
             }
 
@@ -86,7 +86,7 @@ public class Patterns {
             }
 
             //space
-            for (int col = 0; col < n-row-1; col++) {
+            for (int col = 0; col < n - row - 1; col++) {
                 System.out.print(" ");
             }
             System.out.println();
@@ -102,13 +102,26 @@ public class Patterns {
             }
 
             //star
-            for (int col = 0; col < 2 * (n-row)-1; col++) {
+            for (int col = 0; col < 2 * (n - row) - 1; col++) {
                 System.out.print("*");
             }
 
             //space
             for (int col = 0; col < row; col++) {
                 System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern13(int n) {
+        int num = 1;
+        for (int i = 1; i <= n; i++) {
+
+            //space
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num+" ");
+                num += 1;
             }
             System.out.println();
         }
