@@ -3,13 +3,13 @@ package topics.Patterns;
 public class Patterns {
     //Rules
     /*
-    * 1. Count Number of Rows
-    * 2. For the inner loop, focus on the Column & connect them somehow to the rows
-    * 3.
-    * 4. Observe symmetry (Optional) */
+     * 1. Count Number of Rows
+     * 2. For the inner loop, focus on the Column & connect them somehow to the rows
+     * 3.
+     * 4. Observe symmetry (Optional) */
 
     public static void main(String[] args) {
-        pattern7(3);
+        Pattern12(4);
     }
 
     static void Pattern1(int n) {
@@ -32,7 +32,7 @@ public class Patterns {
         }
     }
 
-    static void PatternNTriangle(int n) {
+    static void Pattern3(int n) {
         for (int row = 0; row < n; row++) {
 
             for (int col = 0; col <= row; col++) {
@@ -42,7 +42,7 @@ public class Patterns {
         }
     }
 
-    static void PatternNTriangle2(int n) {
+    static void Pattern4(int n) {
         for (int row = 0; row < n; row++) {
 
             for (int col = 0; col <= row; col++) {
@@ -52,7 +52,7 @@ public class Patterns {
         }
     }
 
-    static void Seeding(int n) {
+    static void Pattern5(int n) {
         for (int i = n; i > 0; i--) {
 
             for (int j = 0; j < i; j++) {
@@ -62,7 +62,7 @@ public class Patterns {
         }
     }
 
-    static void Seeding2(int n) {
+    static void Pattern6(int n) {
         for (int i = n; i > 0; i--) {
 
             for (int j = 0; j < i; j++) {
@@ -72,11 +72,11 @@ public class Patterns {
         }
     }
 
-    static void pattern6(int n) {
+    static void Pattern7(int n) {
         for (int row = 0; row < n; row++) {
 
             //space
-            for (int col = 0; col < n-row-1; col++) {
+            for (int col = 0; col < n - row - 1; col++) {
                 System.out.print(" ");
             }
 
@@ -86,14 +86,14 @@ public class Patterns {
             }
 
             //space
-            for (int col = 0; col < n-row-1; col++) {
+            for (int col = 0; col < n - row - 1; col++) {
                 System.out.print(" ");
             }
             System.out.println();
         }
     }
 
-    static void pattern7(int n) {
+    static void Pattern8(int n) {
         for (int row = 0; row < n; row++) {
 
             //space
@@ -102,7 +102,7 @@ public class Patterns {
             }
 
             //star
-            for (int col = 0; col < 2 * (n-row)-1; col++) {
+            for (int col = 0; col < 2 * (n - row) - 1; col++) {
                 System.out.print("*");
             }
 
@@ -111,6 +111,50 @@ public class Patterns {
                 System.out.print(" ");
             }
             System.out.println();
+        }
+    }
+
+    static void Pattern9(int n) {
+        Pattern7(8);
+        Pattern8(8);
+    }
+
+    static void Pattern10(int n) {
+        Pattern2(n);
+        Pattern5(n - 1);
+    }
+
+    static void Pattern11(int n) {
+        int start = 1;
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) start = 1;
+            else start = 0;
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print(start);
+                start = 1 - start;
+            }
+            System.out.println();
+        }
+    }
+
+    static void Pattern12(int n) {
+        int space = 2 * (n - 1);
+        for (int i = 1; i <= n; i++) {
+            //number
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            //space
+            for (int j = 1; j <= space; j++) {
+                System.out.print(" ");
+            }
+            //number
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+            space = space - 2;
         }
     }
 }
