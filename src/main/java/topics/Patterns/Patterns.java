@@ -9,7 +9,8 @@ public class Patterns {
      * 4. Observe symmetry (Optional) */
 
     public static void main(String[] args) {
-        Pattern12(4);
+
+        pattern14(5);
     }
 
     static void Pattern1(int n) {
@@ -114,6 +115,7 @@ public class Patterns {
         }
     }
 
+
     static void Pattern9(int n) {
         Pattern7(8);
         Pattern8(8);
@@ -134,9 +136,9 @@ public class Patterns {
                 System.out.print(start);
                 start = 1 - start;
             }
-            System.out.println();
         }
     }
+
 
     static void Pattern12(int n) {
         int space = 2 * (n - 1);
@@ -155,6 +157,33 @@ public class Patterns {
             }
             System.out.println();
             space = space - 2;
+
+
+        }
+    }
+
+    static void pattern13(int n) {
+        int num = 1;
+        for (int i = 1; i <= n; i++) {
+
+            //space
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num + " ");
+                num += 1;
+
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern14(int n) {
+
+        for (int i = 0; i < n; i++) {
+
+            for (char ch = 'A'; ch < 'A' + i + 1; ch++) {
+                System.out.print((char) (ch + i) + "");
+            }
+            System.out.println();
         }
     }
 }
