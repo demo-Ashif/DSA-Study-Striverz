@@ -10,7 +10,7 @@ public class Patterns {
 
     public static void main(String[] args) {
 
-        pattern18(5);
+        pattern18_2(5);
     }
 
     static void Pattern1(int n) {
@@ -249,7 +249,24 @@ public class Patterns {
                 val++;
             }
 
-            val = (char) ('E'-i);
+            val = (char) ('E' - i);
+
+            System.out.println();
+        }
+    }
+
+    static void pattern18_2(int n) {
+
+        char val = (char) ('A' + n-1);
+        for (int i = 1; i <= n; i++) {
+
+            //characters
+            for (int j = 1; j <= i; j++) {
+                System.out.print(val);
+                val--;
+            }
+
+            val = (char) ('A' + n-1);
 
             System.out.println();
         }
