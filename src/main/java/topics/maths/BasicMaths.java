@@ -4,7 +4,7 @@ package topics.maths;
 public class BasicMaths {
 
     public static void main(String[] args) {
-        countDigit(660);
+        System.out.println(armstrongNumber(1));
     }
 
     static void countDigit(int n) {
@@ -23,5 +23,18 @@ public class BasicMaths {
         }
 
         System.out.print(count);
+    }
+
+    static boolean armstrongNumber(int n){
+        int sum =0;
+        int temp = n;
+
+        while (temp>0){
+            int digit = temp%10;
+            sum = sum+ (digit*digit*digit);
+            temp= temp/10;
+        }
+
+        return (sum == n);
     }
 }
