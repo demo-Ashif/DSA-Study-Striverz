@@ -51,4 +51,8 @@ public class BasicMaths {
 
         return count == 2;
     }
+
+    static void euclidGCD(){
+
+    }
 }
