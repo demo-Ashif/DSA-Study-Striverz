@@ -10,24 +10,26 @@ public class Recursions {
         printNos(50);
     }
 
-    public static void printNos(int x) {
+    public static  int[] printNos(int x) {
 
         // Write Your Code Here
 
         int[] ans = new int[x];
 
-        printN(ans, x);
+        return printN(ans, x);
 
-        System.out.print(Arrays.toString(ans));
+//        System.out.print(Arrays.toString(ans));
     }
 
-    static void printN(int[] ans, int n) {
+    static int[] printN(int[] ans, int n) {
 
         if (n > 1) {
             printN(ans, n - 1);
         }
 
         ans[n - 1] = n;
+
+        return ans;
     }
 
 }
