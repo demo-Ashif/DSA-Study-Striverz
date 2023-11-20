@@ -7,8 +7,8 @@ import java.util.Arrays;
  */
 public class Recursions {
     public static void main(String[] args) {
-//        printNos(50);
-        printNtimes(5);
+        System.out.print(Arrays.toString(printNos(5)));
+//        printNtimes(5);
     }
 
     public static  int[] printNos(int x) {
@@ -20,7 +20,7 @@ public class Recursions {
         if (n > 1) {
             printN(ans, n - 1);
         }
-        ans[n - 1] = n;
+        ans[n - 1] = ans.length-n+1;
         return ans;
     }
 
