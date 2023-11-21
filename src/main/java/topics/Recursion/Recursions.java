@@ -1,13 +1,13 @@
 package topics.Recursion;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 /*
  * https://leetcode.com/problems/plus-one/
  */
 public class Recursions {
     public static void main(String[] args) {
-//        printNos(50);
-//        System.out.print(sumFirstN(3));
-//        printNtoOne(1, 5);
+
         System.out.print(printFactorial(31));
     }
 
@@ -34,26 +34,61 @@ public class Recursions {
         return n * printFactorial(n - 1);
     }
 
-    public static int[] printNos(int x) {
 
-        // Write Your Code Here
-
-        int[] ans = new int[x];
-
-        return printN(ans, x);
-
-        //System.out.print(Arrays.toString(ans));
-    }
 
     static int[] printN(int[] ans, int n) {
-
         if (n > 1) {
             printN(ans, n - 1);
         }
-
-        ans[n - 1] = n;
-
+        ans[n - 1] = ans.length - n + 1;
         return ans;
     }
 
+    public static void printNtimes(int n) {
+        // Write your code here.
+        print(n);
+    }
+
+    static void print(int n) {
+        if (n > 1) {
+            print(n - 1);
+        }
+        System.out.print("Coding Ninjas ");
+    }
+
+    public static List<Long> calc(List<Long> l, int i, long res, long n) {
+        res *= i;
+
+        if (res <= n) {
+
+            l.add(res);
+
+            calc(l, i + 1, res, n);
+
+        }
+        return l;
+    }
+
+    public static List<Long> factorialNumbers(long n) {
+
+        List<Long> outputList = new ArrayList<>();
+
+        long result = 1;
+
+        calc(outputList, 1, result, n);
+
+        return outputList;
+    }
+
+    public static int[] revArray(int[] arr, int l, int r) {
+        if (l >= r) {
+            return arr;
+        }
+
+        int temp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = temp;
+        revArray(arr, l + 1, r - 1);
+        return arr;
+    }
 }
