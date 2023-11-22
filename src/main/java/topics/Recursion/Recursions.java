@@ -1,14 +1,26 @@
 package topics.Recursion;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 /*
  * https://leetcode.com/problems/plus-one/
  */
 public class Recursions {
     public static void main(String[] args) {
 
-        System.out.print(printFactorial(31));
+        System.out.print(fibonacchi(4));
+
+        int value = fibonacchi(4);
+    }
+
+    public static int fibonacchi(int n) {
+        if (n <= 1) {
+            return n;
+        }
+
+        return fibonacchi(n - 1) + fibonacchi(n - 2);
     }
 
 
@@ -33,7 +45,6 @@ public class Recursions {
         }
         return n * printFactorial(n - 1);
     }
-
 
 
     static int[] printN(int[] ans, int n) {
