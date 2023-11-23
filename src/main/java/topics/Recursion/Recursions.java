@@ -9,15 +9,41 @@ import java.util.List;
  */
 public class Recursions {
     public static void main(String[] args) {
-        int[] arr = new int[]{7, 1, 5, 3, 6, 4};
-//        System.out.print(Arrays.toString(revArray(arr, 0, arr.length - 1)));
         System.out.print(checkPalindrome("madam", 0));
+
     }
 
-    public static int[] printNos(int x) {
-        int[] ans = new int[x];
-        return printN(ans, x);
+    public static int fibonacchi(int n) {
+        if (n <= 1) {
+            return n;
+        }
+
+        return fibonacchi(n - 1) + fibonacchi(n - 2);
     }
+
+
+    public static long sumFirstN(long n) {
+        // Write your code here.
+        return (n * (n + 1)) / 2;
+    }
+
+    // print N to 1 without f(i-1,N)
+
+    public static void printNtoOne(int i, int n) {
+        if (i < n) {
+            printNtoOne(i + 1, n);
+        }
+
+        System.out.print(i);
+    }
+
+    public static int printFactorial(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        return n * printFactorial(n - 1);
+    }
+
 
     static int[] printN(int[] ans, int n) {
         if (n > 1) {
