@@ -10,7 +10,8 @@ import java.util.List;
 public class Recursions {
     public static void main(String[] args) {
         int[] arr = new int[]{7, 1, 5, 3, 6, 4};
-        System.out.print(Arrays.toString(revArray(arr, 0, arr.length - 1)));
+//        System.out.print(Arrays.toString(revArray(arr, 0, arr.length - 1)));
+        System.out.print(checkPalindrome("madam", 0));
     }
 
     public static int[] printNos(int x) {
@@ -72,5 +73,11 @@ public class Recursions {
         arr[r] = temp;
         revArray(arr, l + 1, r - 1);
         return arr;
+    }
+
+    static boolean checkPalindrome(String str, int i) {
+        if (i >= str.length() / 2) return true;
+        if (str.charAt(i) != str.charAt(str.length() - i - 1)) return false;
+        return checkPalindrome(str, i + 1);
     }
 }
