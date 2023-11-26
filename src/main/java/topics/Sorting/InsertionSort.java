@@ -8,21 +8,19 @@ public class InsertionSort {
         insertionSort(data);
     }
 
-    private static void insertionSort(int[] nums) {
+    private static void insertionSort(int[] arr) {
 
-        // 13, 2, 7, 8, 4, 5, 6, 1
-        for (int i = 1; i < nums.length; i++) {
-            int current = nums[i];
-            int j = i-1;
-            while (j>=0 && current < nums[j]){
-                nums[j+1]= nums[j];
+        for (int i = 0; i < arr.length; i++) {
+            int j = i;
+            while (j > 0 && arr[j-1] > arr[j]) {
+                int temp = arr[j-1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
                 j--;
             }
 
-            //placement
-            nums[j+1] = current;
         }
 
-        System.out.println(Arrays.toString(nums));
+        System.out.println(Arrays.toString(arr));
     }
 }

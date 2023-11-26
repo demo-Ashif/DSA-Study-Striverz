@@ -8,22 +8,23 @@ public class SelectionSort {
         selectionSort(data);
     }
 
-    private static void selectionSort(int[] nums) {
+    private static void selectionSort(int[] arr) {
 
-        for (int i = 0; i <= nums.length-2; i++) {
+        for (int i = 0; i <= arr.length-2; i++) {
             int smallestIndex = i;
 
-            for (int j = i+1 ; j <= nums.length-1; j++) {
-                if (nums[j] < nums[smallestIndex]) {
+            for (int j = i+1 ; j <= arr.length-1; j++) {
+                if (arr[j] < arr[smallestIndex]) {
                     smallestIndex = j;
                 }
             }
 
-            int tmp = nums[i];
-            nums[i] = nums[smallestIndex];
-            nums[smallestIndex] = tmp;
+            int tmp = arr[i];
+            arr[i] = arr[smallestIndex];
+            arr[smallestIndex] = tmp;
+
+            System.out.print(arr[smallestIndex]);
         }
 
-        System.out.println(Arrays.toString(nums));
     }
 }

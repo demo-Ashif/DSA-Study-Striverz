@@ -8,18 +8,18 @@ public class BubbleSort {
         bubbleSort(data);
     }
 
-    private static void bubbleSort(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 1; j < nums.length - i; j++) {
-                if (nums[j] < nums[j - 1]) {
+    private static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j < arr.length - i; j++) {
+                if (arr[j-1] > arr[j]) {
                     //swap
-                    int tmp = nums[j];
-                    nums[j] = nums[j - 1];
-                    nums[j - 1] = tmp;
+                    int tmp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = tmp;
                 }
             }
         }
 
-        System.out.println(Arrays.toString(nums));
+        System.out.println(Arrays.toString(arr));
     }
 }
