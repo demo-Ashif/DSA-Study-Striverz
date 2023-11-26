@@ -10,20 +10,18 @@ public class SelectionSort {
 
     private static void selectionSort(int[] nums) {
 
-        for (int i = 0; i < nums.length; i++) {
-            int smallest = i;
+        for (int i = 0; i <= nums.length-2; i++) {
+            int smallestIndex = i;
 
-            //checking remaining array which index has the smallest value
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[j] < nums[i]) {
-                    smallest = j;
+            for (int j = i+1 ; j <= nums.length-1; j++) {
+                if (nums[j] < nums[smallestIndex]) {
+                    smallestIndex = j;
                 }
             }
 
-            //swap
             int tmp = nums[i];
-            nums[i] = nums[smallest];
-            nums[smallest] = tmp;
+            nums[i] = nums[smallestIndex];
+            nums[smallestIndex] = tmp;
         }
 
         System.out.println(Arrays.toString(nums));
