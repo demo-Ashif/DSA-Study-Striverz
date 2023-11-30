@@ -5,26 +5,26 @@ import java.util.Arrays;
 public class SelectionSort {
     public static void main(String[] args) {
         int[] data = {13, 2, 7, 8, 4, 5, 6, 1};
-        selectionSort(data);
+        selectionSort(data,0,data.length-1);
+
+        for (int value : data) {
+            System.out.print(value + " ");
+        }
     }
 
-    private static void selectionSort(int[] arr) {
+    private static void selectionSort(int[] arr, int smallestIndex, int endIndex) {
 
-        for (int i = 0; i <= arr.length-2; i++) {
-            int smallestIndex = i;
+        if (smallestIndex == endIndex) return;
 
-            for (int j = i+1 ; j <= arr.length-1; j++) {
-                if (arr[j] < arr[smallestIndex]) {
-                    smallestIndex = j;
-                }
+        for (int j = smallestIndex + 1; j <= endIndex; j++) {
+            if (arr[j] < arr[smallestIndex]) {
+                int tmp = arr[j];
+                arr[j]=arr[smallestIndex];
+                arr[smallestIndex] = tmp;
             }
-
-            int tmp = arr[i];
-            arr[i] = arr[smallestIndex];
-            arr[smallestIndex] = tmp;
-
-            System.out.print(arr[smallestIndex]);
         }
+
+        selectionSort(arr,smallestIndex+1,endIndex);
 
     }
 }
