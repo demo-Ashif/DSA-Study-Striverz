@@ -22,6 +22,6 @@ public class RemoveDuplicates {
             }
 
         }
-        return move+1;
+        return move + 1;
     }
 }

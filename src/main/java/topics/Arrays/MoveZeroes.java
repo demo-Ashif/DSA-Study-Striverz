@@ -7,25 +7,43 @@ import java.util.Arrays;
  */
 public class MoveZeroes {
     public static void main(String[] args) {
-        moveZeroes(new int[]{1, 0, 1});
+        moveZeros(5,new int[]{1, 2,0,0,2,3});
     }
 
-    static void moveZeroes(int[] nums) {
-        int zeroPointer = 0;
-        int mvPointer = 0;
+
+    public static int[] moveZeros(int n, int[] nums) {
+
+        int zero = 0;
+        int mv = 0;
+
+        //find first zero
 
         for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                zero = i;
+                mv = i + 1;
+                break;
+            }
+        }
 
-            if (nums[mvPointer] != 0) {
-                nums[zeroPointer] = nums[mvPointer];
-                nums[mvPointer] = 0;
+        for (int i = mv; i < nums.length; i++) {
+
+            if (nums[zero] == 0 && nums[mv] != 0) {
+                //swap
+                nums[zero] = nums[mv];
+                nums[mv] = 0;
+
+                zero++;
             }
 
-            zeroPointer++;
-            mvPointer++;
+            mv++;
+
+
 
         }
 
         System.out.println(Arrays.toString(nums));
+
+        return nums;
     }
 }
