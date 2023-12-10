@@ -38,21 +38,21 @@ public class FindUnion {
                 j++;
             }
 
-
-            while (i < n1) {
-                if (union.isEmpty() || union.get(union.size() - 1) != a[i]) {
-                    union.add(a[i]);
-                }
-                i++;
-            }
-
-            while (j < n2) {
-                if (union.isEmpty() || union.get(union.size() - 1) != b[j]) {
-                    union.add(b[j]);
-                }
-                j++;
-            }
         }
+        while (i < n1) {
+            if (union.isEmpty() || union.get(union.size() - 1) != a[i]) {
+                union.add(a[i]);
+            }
+            i++;
+        }
+
+        while (j < n2) {
+            if (union.isEmpty() || union.get(union.size() - 1) != b[j]) {
+                union.add(b[j]);
+            }
+            j++;
+        }
+
 
         System.out.println(union.toString());
 

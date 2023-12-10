@@ -37,9 +37,6 @@ public class MoveZeroes {
             }
 
             mv++;
-
-
-
         }
 
         System.out.println(Arrays.toString(nums));
