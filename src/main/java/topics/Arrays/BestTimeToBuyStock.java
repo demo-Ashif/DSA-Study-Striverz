@@ -9,18 +9,17 @@ public class BestTimeToBuyStock {
         System.out.print(result);
     }
 
-    static int maxProfit(int[] prices) {
+    static int maxProfit(int[] arr) {
 
-        int minValueSoFar = prices[0];
-        int profit = 0;
+        int minPrice = arr[0];
+        int maxProfit = 0;
 
-        for (int i = 1; i < prices.length; i++) {
-            minValueSoFar = Math.min(minValueSoFar, prices[i]);
-            int tmpProfit = prices[i] - minValueSoFar;
-            profit = Math.max(profit, tmpProfit);
+        for (int i = 1; i < arr.length; i++) {
+            minPrice = Math.min(minPrice, arr[i]);
+            maxProfit = Math.max(maxProfit, arr[i] - minPrice);
         }
 
-        return profit;
+        return maxProfit;
 
     }
 }
