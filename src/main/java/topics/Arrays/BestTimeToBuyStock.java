@@ -5,7 +5,7 @@ package topics.Arrays;
  */
 public class BestTimeToBuyStock {
     public static void main(String[] args) {
-        int result = maxProfit(new int[]{7, 1, 5, 3, 6, 4});
+        int result = maxProfit(new int[]{7, 2, 5, 1, 6, 8});
         System.out.print(result);
     }
 
