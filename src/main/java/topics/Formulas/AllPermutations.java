@@ -6,8 +6,7 @@ import java.util.List;
 public class AllPermutations {
     public static void main(String[] args) {
         int[] nums = {0,1};
-        Solution solution = new Solution();
-        List<List<Integer>> ls = solution.permute(nums);
+        List<List<Integer>> ls = getAllPermutations(nums);
         System.out.println("All Permutations are");
         for (int i = 0; i < ls.size(); i++) {
             for (int j = 0; j < ls.get(i).size(); j++) {
@@ -17,17 +16,14 @@ public class AllPermutations {
         }
     }
 
-}
-
-class Solution {
-    public List<List<Integer>> permute(int[] nums) {
+    public static List<List<Integer>> getAllPermutations(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> ds = new ArrayList<>();
         recurPermute(ans, ds, nums);
         return ans;
     }
 
-    static void recurPermute(List<List<Integer>> ans, List<Integer> ds, int[] nums) {
+    private static void recurPermute(List<List<Integer>> ans, List<Integer> ds, int[] nums) {
         //if we match the length, it is a permutation
         if (ds.size() == nums.length) {
             ans.add(new ArrayList<>(ds));
@@ -45,4 +41,5 @@ class Solution {
             ds.remove(ds.size() - 1);
         }
     }
+
 }

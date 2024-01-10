@@ -11,7 +11,7 @@ public class GCD {
         System.out.print(result);
     }
 
-    static int euclidGCD(int a, int b) {
+    public static int euclidGCD(int a, int b) {
         while (a > 0 && b > 0) {
             if (a > b) {
                 a = a % b;
