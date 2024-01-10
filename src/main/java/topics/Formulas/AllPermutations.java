@@ -5,8 +5,9 @@ import java.util.List;
 
 public class AllPermutations {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        List<List<Integer>> ls = permute(nums);
+        int[] nums = {0,1};
+        Solution solution = new Solution();
+        List<List<Integer>> ls = solution.permute(nums);
         System.out.println("All Permutations are");
         for (int i = 0; i < ls.size(); i++) {
             for (int j = 0; j < ls.get(i).size(); j++) {
@@ -16,14 +17,25 @@ public class AllPermutations {
         }
     }
 
+}
+
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> ds = new ArrayList<>();
+        recurPermute(ans, ds, nums);
+        return ans;
+    }
+
     static void recurPermute(List<List<Integer>> ans, List<Integer> ds, int[] nums) {
         //if we match the length, it is a permutation
         if (ds.size() == nums.length) {
             ans.add(new ArrayList<>(ds));
             return;
         }
-        for (int num = 1; num <= nums.length; num++) {
+        for (int num:nums) {
             //avoid if there is already a number picked in ds
+            System.out.println(num);
             if (ds.contains(num)) continue;
             //add new element
             ds.add(num);
@@ -32,13 +44,5 @@ public class AllPermutations {
             //remove the element
             ds.remove(ds.size() - 1);
         }
-    }
-
-
-    public static List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> ds = new ArrayList<>();
-        recurPermute(ans, ds, nums);
-        return ans;
     }
 }
